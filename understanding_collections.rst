@@ -9,7 +9,7 @@ Where an item can contain more than one child item (for example, more than one :
 **NB:** All of this explanation uses "thing" in place of the specific type of item (component, variable etc).
 
 **NB:** This section explains the basic rationale of the collections.
-For practical information about how they are used, please see the :ref:`Viewing a model<view_model>` and :ref:`Editing a model<edit_model>` pages.
+For practical information about how they are used, please see the :howto:`Viewing a model<view_model>` and :howto:`Editing a model<edit_model>` pages.
 
 Count things
 ============
