@@ -63,9 +63,9 @@ extlinks = {
     # :api: shortcut here.  This only works internally.
     'api': (f'/documentation/{LIBRARY_VERSION}/api/classlibcellml_1_1%s', ''),
     'cellml2': ('https://cellml-specification.readthedocs.io/en/latest/%s', ''),
-    'howto': ('/documentation/howto/%s', ''),
-    # 'tutorial': (f'/documentation/{LIBRARY_VERSION}/tutorials/tuturial%s/index', ''),
-    # 'hh_tutorial': (f'/documentation/{LIBRARY_VERSION}/tutorials/hh_tuturial%s/index', ''),
+    'howto': (f'/documentation/{LIBRARY_VERSION}/howto/%s', ''),
+    # 'tutorial': (f'/documentation/{LIBRARY_VERSION}/tutorials/tutorial%s/index', ''),
+    # 'hh_tutorial': (f'/documentation/{LIBRARY_VERSION}/tutorials/hh_tutorial%s/index', ''),
     # 'usecases': (f'/documentation/{LIBRARY_VERSION}/tutorials/common_use_cases/%s', ''),
 }
 
