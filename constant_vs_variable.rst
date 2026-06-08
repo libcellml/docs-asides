@@ -21,17 +21,19 @@ In the example below, :code:`A` is a constant with value 1 for the entire simula
 
 .. tabs::
 
-  .. code-tab:: c++
+  .. group-tab:: C++
 
-    // Setting A = 1 using a math block:
-    std::string myMathString = "<math><apply><eq/><ci>A</ci><cn cellml:units=\"dimensionless\">1</ci></apply></math>";
-    myComponent->appendMath(myMathString);
+    .. literalinclude:: constant_vs_variable.cpp
+      :language: c++
+      :start-after: // start - CONSTANT VS VARIABLE 1
+      :end-before: // end - CONSTANT VS VARIABLE 1
 
-  .. code-tab:: python
+  .. group-tab:: Python
 
-    # Setting A = 1 using a math block:
-    my_math_string = '<math><apply><eq/><ci>A</ci><cn cellml:units="dimensionless">1</ci></apply></math>'
-    my_component.appendMath(my_math_string)
+    .. literalinclude:: constant_vs_variable.py
+      :language: python
+      :start-after: # start - CONSTANT VS VARIABLE 1
+      :end-before: # end - CONSTANT VS VARIABLE 1
 
 .. container:: toggle
 
@@ -58,17 +60,19 @@ Of course :math:`B = C` is perhaps the simplest equation possible, and yours wil
 
 .. tabs::
 
-  .. code-tab:: c++
+  .. group-tab:: C++
 
-    // Setting B = C using a math block:
-    std::string myMathString = "<math><apply><eq/><ci>B</ci><ci>C</ci></apply></math>";
-    myComponent->appendMath(myMathString);
+    .. literalinclude:: constant_vs_variable.cpp
+      :language: c++
+      :start-after: // start - CONSTANT VS VARIABLE 2
+      :end-before: // end - CONSTANT VS VARIABLE 2
 
-  .. code-tab:: python
+  .. group-tab:: Python
 
-    # Setting B = C using a math block:
-    my_math_string = '<math><apply><eq/><ci>B</ci><ci>C</ci></apply></math>'
-    my_component.appendMath(my_math_string)
+    .. literalinclude:: constant_vs_variable.py
+      :language: python
+      :start-after: # start - CONSTANT VS VARIABLE 2
+      :end-before: # end - CONSTANT VS VARIABLE 2
 
 3. Assign as an initial value attribute
 ---------------------------------------
@@ -80,23 +84,19 @@ In that situation, having an initial value specified as well as a maths definiti
 
 .. tabs::
 
-  .. code-tab:: c++
+  .. group-tab:: C++
 
-    // Setting the initial value of B:
-    myComponent->variable("B")->setInitialValue(1);
+    .. literalinclude:: constant_vs_variable.cpp
+      :language: c++
+      :start-after: // start - CONSTANT VS VARIABLE 3
+      :end-before: // end - CONSTANT VS VARIABLE 3
 
-    // Setting B = C using a math block:
-    std::string myMathString = "<math><apply><eq/><ci>B</ci><ci>C</ci></apply></math>";
-    myComponent->appendMath(myMathString);
+  .. group-tab:: Python
 
-  .. code-tab:: python
-
-    # Setting the initial value of B:
-    my_component->variable('B')->setInitialValue(1)
-
-    # Setting B = C using a math block:
-    my_math_string = '<math><apply><eq/><ci>B</ci><ci>C</ci></apply></math>'
-    my_component.appendMath(my_math_string)
+    .. literalinclude:: constant_vs_variable.py
+      :language: python
+      :start-after: # start - CONSTANT VS VARIABLE 3
+      :end-before: # end - CONSTANT VS VARIABLE 3
 
 .. container:: toggle
 
@@ -136,40 +136,19 @@ The difference is that when a :code:`variable` element is a state variable (ie: 
 
 .. tabs::
 
-  .. code-tab:: c++
+  .. group-tab:: C++
 
-    // Setting the initial value of E:
-    myComponent->variable("E")->setInitialValue(3);
+    .. literalinclude:: constant_vs_variable.cpp
+      :language: c++
+      :start-after: // start - CONSTANT VS VARIABLE 4
+      :end-before: // end - CONSTANT VS VARIABLE 4
 
-    // Solving for E using a differential equation:
-    std::string myDifferentialEquation = "<math>\n"
-      "  <apply><eq/>\n"
-      "    <diff>\n"
-      "      <ci>E</ci>\n"
-      "      <bvar>t</bvar>\n"
-      "    </diff>\n"
-      "    <cn cellml:units=\"dimensionless\">1</cn>\n"
-      "  </apply>\n"
-      "</math>";
-    myComponent->appendMath(myDifferentialEquation);
+  .. group-tab:: Python
 
-  .. code-tab:: python
-
-    # Setting the initial value of E:
-    my_component->variable('E')->setInitialValue(3)
-
-    # Solving for E using a differential equation:
-    my_differential_equation = '<math>\n'
-      '  <apply><eq/>\n'
-      '    <diff>\n'
-      '      <ci>E</ci>\n'
-      '      <bvar>t</bvar>\n'
-      '    </diff>\n'
-      '    <cn cellml:units="dimensionless">1</cn>\n'
-      '  </apply>\n'
-      '</math>'
-    my_component.appendMath(my_math_string)
-
+    .. literalinclude:: constant_vs_variable.py
+      :language: python
+      :start-after: # start - CONSTANT VS VARIABLE 4
+      :end-before: # end - CONSTANT VS VARIABLE 4
 
 .. container:: toggle
 

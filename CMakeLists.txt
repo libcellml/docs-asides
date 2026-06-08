@@ -14,3 +14,8 @@ set(_PART_SRC understanding_units.cpp)
 
 add_executable(understanding_units ${_PART_SRC})
 target_link_libraries(understanding_units PUBLIC cellml)
+
+set(_PART_SRC constant_vs_variable.cpp)
+
+add_executable(constant_vs_variable ${_PART_SRC})
+target_link_libraries(constant_vs_variable PUBLIC cellml)
