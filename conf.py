@@ -12,7 +12,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
 import os
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -41,7 +40,7 @@ extensions = [
 templates_path = ['static/templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -310,4 +309,3 @@ texinfo_documents = [
 
 # def setup(app):
 #     app.add_css_file('css/libcellml.css')
-

@@ -77,79 +77,77 @@ Examples are shown for C++ and Python below.
 Case 1: Add a thing
 -------------------
 
-.. container:: toggle
+Use the add functionality to add a component to the model.
 
-  .. container:: header
+.. tabs::
 
-    Show C++ snippet
+  .. group-tab:: C++
 
-  .. literalinclude:: asides.cpp
-    :language: c++
-    :start-after: // start - UNDERSTANDING COLLECTIONS 1
-    :end-before: // end - UNDERSTANDING COLLECTIONS 1
+    .. literalinclude:: asides.cpp
+      :language: c++
+      :start-after: // start - UNDERSTANDING COLLECTIONS 1
+      :end-before: // end - UNDERSTANDING COLLECTIONS 1
 
-.. container:: toggle
+  .. group-tab:: Python
 
-  .. container:: header
-
-    Show Python snippet
-
-  .. literalinclude:: asides.py
-    :language: python
-    :start-after: # start - UNDERSTANDING COLLECTIONS 1
-    :end-before: # end - UNDERSTANDING COLLECTIONS 1
+    .. literalinclude:: asides.py
+      :language: python
+      :start-after: # start - UNDERSTANDING COLLECTIONS 1
+      :end-before: # end - UNDERSTANDING COLLECTIONS 1
 
 Case 2: Remove a thing
 ----------------------
 
-.. container:: toggle
+Use the get and remove functionality together.
+Consider the case where we already have a model with three components:
 
-  .. container:: header
+- Component 1 named "component" at index 0.
+- Component 2 named "componentName" at index 1.
+- Component 3 named "myComponent" at index 2.
 
-    Show C++ snippet
+.. tabs::
 
-  .. literalinclude:: asides.cpp
-    :language: c++
-    :start-after: // start - UNDERSTANDING COLLECTIONS 2
-    :end-before: // end - UNDERSTANDING COLLECTIONS 2
+  .. group-tab:: C++
 
-.. container:: toggle
+    .. literalinclude:: asides.cpp
+      :language: c++
+      :start-after: // start - UNDERSTANDING COLLECTIONS 2
+      :end-before: // end - UNDERSTANDING COLLECTIONS 2
 
-  .. container:: header
+  .. group-tab:: Python
 
-    Show Python snippet
-
-  .. literalinclude:: asides.py
-    :language: python
-    :start-after: # start - UNDERSTANDING COLLECTIONS 2
-    :end-before: # end - UNDERSTANDING COLLECTIONS 2
+    .. literalinclude:: asides.py
+      :language: python
+      :start-after: # start - UNDERSTANDING COLLECTIONS 2
+      :end-before: # end - UNDERSTANDING COLLECTIONS 2
 
 At this point, the model's components collection no longer contains any components, and the component pointer has no parent.
+
+A cautionary tale using remove without get.
+If you use the remove functionality without first getting the component, you will not have a pointer to the component that was removed.
+That component will be permanently deleted, and you will have lost all the content contained within it.
 
 Case 3: Remove all things
 -------------------------
 
-.. container:: toggle
+Consider the same model as before with three components.
+Use the remove all functionality to remove all components from the model.
 
-  .. container:: header
+.. tabs::
 
-    Show C++ snippet
+  .. group-tab:: C++
 
-  .. literalinclude:: asides.cpp
-    :language: c++
-    :start-after: // start - UNDERSTANDING COLLECTIONS 3
-    :end-before: // end - UNDERSTANDING COLLECTIONS 3
+    .. literalinclude:: asides.cpp
+      :language: c++
+      :start-after: // start - UNDERSTANDING COLLECTIONS 3
+      :end-before: // end - UNDERSTANDING COLLECTIONS 3
 
-.. container:: toggle
+  .. group-tab:: Python
 
-  .. container:: header
-
-    Show Python snippet
-
-  .. literalinclude:: asides.py
-    :language: python
-    :start-after: # start - UNDERSTANDING COLLECTIONS 3
-    :end-before: # end - UNDERSTANDING COLLECTIONS 3
+    .. literalinclude:: asides.py
+      :language: python
+      :start-after: # start - UNDERSTANDING COLLECTIONS 3
+      :end-before: # end - UNDERSTANDING COLLECTIONS 3
 
 At this point, we have the same outcome as in Case 2 above.
 The model's component collection no longer contains the component, and the component itself has no parent.
@@ -157,52 +155,45 @@ The model's component collection no longer contains the component, and the compo
 Case 4: Take a thing
 --------------------
 
-.. container:: toggle
+Again, consider that we have the same model as before with three components.
 
-  .. container:: header
+.. tabs::
 
-    Show C++ snippet
+  .. group-tab:: C++
 
-  .. literalinclude:: asides.cpp
-    :language: c++
-    :start-after: // start - UNDERSTANDING COLLECTIONS 4
-    :end-before: // end - UNDERSTANDING COLLECTIONS 4
+    .. literalinclude:: asides.cpp
+      :language: c++
+      :start-after: // start - UNDERSTANDING COLLECTIONS 4
+      :end-before: // end - UNDERSTANDING COLLECTIONS 4
 
-.. container:: toggle
+  .. group-tab:: Python
 
-  .. container:: header
-
-    Show Python snippet
-
-  .. literalinclude:: asides.py
-    :language: python
-    :start-after: # start - UNDERSTANDING COLLECTIONS 4
-    :end-before: # end - UNDERSTANDING COLLECTIONS 4
+    .. literalinclude:: asides.py
+      :language: python
+      :start-after: # start - UNDERSTANDING COLLECTIONS 4
+      :end-before: # end - UNDERSTANDING COLLECTIONS 4
 
 Case 5: Replace a thing
 -----------------------
 
-.. container:: toggle
+Consider the same model as before with three components.
+Use the replace functionality to replace a component in the model.
 
-  .. container:: header
+.. tabs::
 
-    Show C++ snippet
+  .. group-tab:: C++
 
-  .. literalinclude:: asides.cpp
-    :language: c++
-    :start-after: // start - UNDERSTANDING COLLECTIONS 5
-    :end-before: // end - UNDERSTANDING COLLECTIONS 5
+    .. literalinclude:: asides.cpp
+      :language: c++
+      :start-after: // start - UNDERSTANDING COLLECTIONS 5
+      :end-before: // end - UNDERSTANDING COLLECTIONS 5
 
-.. container:: toggle
+  .. group-tab:: Python
 
-  .. container:: header
-
-    Show Python snippet
-
-  .. literalinclude:: asides.py
-    :language: python
-    :start-after: # start - UNDERSTANDING COLLECTIONS 5
-    :end-before: # end - UNDERSTANDING COLLECTIONS 5
+    .. literalinclude:: asides.py
+      :language: python
+      :start-after: # start - UNDERSTANDING COLLECTIONS 5
+      :end-before: # end - UNDERSTANDING COLLECTIONS 5
 
 Associated code
 ===============
@@ -210,6 +201,7 @@ Associated code
 The code used in the snippets above can be downloaded from:
 
 - :download:`asides.cpp<asides.cpp>` The C++ code used in the above examples.;
+- :download:`asides.py<asides.py>` The Python code used in the above examples.;
 
 .. container:: nb
 

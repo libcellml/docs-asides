@@ -100,13 +100,15 @@ def main():
 
     # start - UNDERSTANDING COLLECTIONS 5
 
-    # Replace component
+    # Replace component by index.
     new_component = Component("replacedComponent")
     replacement_result = model.replaceComponent(0, new_component)
 
+    # Replace component by name.
     my_new_component = Component("myNewComponent")
     replacement_result = model.replaceComponent("myComponent", my_new_component)
 
+    # Replace component by object.
     my_newest_component = Component("myNewestComponent")
     component = model.component("myNewComponent")
     replacement_result = model.replaceComponent(component, my_newest_component)

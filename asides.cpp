@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
     auto model = buildModel();
     // start - UNDERSTANDING COLLECTIONS 1
 
-    // Use the add functionality to add a component to the model.
+    // Add a component.
     bool result = model->addComponent(libcellml::Component::create("newComponent"));
 
     // end - UNDERSTANDING COLLECTIONS 1
@@ -53,23 +53,19 @@ int main(int argc, char* argv[])
     model->removeComponent(3); // Remove the component at index 3, which is "newComponent".
     // start - UNDERSTANDING COLLECTIONS 2
 
-    // Use the get and remove functionality together.
-    // Consider the case where we already have a model with three components:
-    // - Component 1 named "component" at index 0.
-    // - Component 2 named "componentName" at index 1.
-    // - Component 3 named "myComponent" at index 2.
-    auto component = model->component(0);          // Get either by index,
-    component = model->component("componentName"); // or by name.
+    // Get either by index, or by name.
+    auto component = model->component(0);
+    component = model->component("componentName");
 
-    bool componentWasRemoved = model->removeComponent(0);               // Remove either by index,
-    componentWasRemoved = model->removeComponent("myComponent");   // by name,
-    componentWasRemoved = model->removeComponent(component);       // or by symbol.
+    // Remove either by index, by name, or by symbol.
+    bool componentWasRemoved = model->removeComponent(0);
+    componentWasRemoved = model->removeComponent("myComponent");
+    componentWasRemoved = model->removeComponent(component);
 
     // Removing a component that doesn't exist will return false, and the model's collection will remain unchanged.
-    componentWasRemoved = model->removeComponent(100); // Remove a component at an index that doesn't exist.
-    // A cautionary tale using remove without get.
-    // If you use the remove functionality without first getting the component, you will not have a pointer to the component that was removed.
-    // That component will be permanently deleted, and you will have lost all the content contained within it.
+    // and the model's collection will remain unchanged.
+    // Remove a component at an index that doesn't exist.
+    componentWasRemoved = model->removeComponent(100);
 
     // end - UNDERSTANDING COLLECTIONS 2
 
@@ -86,9 +82,7 @@ int main(int argc, char* argv[])
 
     // start - UNDERSTANDING COLLECTIONS 3
 
-    // Case 3: Remove all things.
-    // Consider the same model as before with three components.
-    // Use the remove all functionality to remove all components from the model.
+    // Remove all components.
     model->removeAllComponents();
 
     // end - UNDERSTANDING COLLECTIONS 3
@@ -99,10 +93,9 @@ int main(int argc, char* argv[])
     setupComponents(model);
     // start - UNDERSTANDING COLLECTIONS 4
 
-    // Case 4: Take a thing.
-    // Again, consider that we have the same model as before with three components.
-    component = model->takeComponent(0);               // Take either by index,
-    component = model->takeComponent("componentName"); // or by name.
+    // Take either by index, or by name.
+    component = model->takeComponent(0);
+    component = model->takeComponent("componentName");
 
     // end - UNDERSTANDING COLLECTIONS 4
     if (model->componentCount() != size_t(1)) {
@@ -114,16 +107,19 @@ int main(int argc, char* argv[])
 
     // start - UNDERSTANDING COLLECTIONS 5
 
-    // Case 5: Replace a thing.
-    // Consider the same model as before with three components.
-    // Use the replace functionality to replace a component in the model.
+    // Replace component at index 0.
     auto newComponent = libcellml::Component::create("replacedComponent");
-    bool replacementResult = model->replaceComponent(0, newComponent); // Replace component at index 0.
+    bool replacementResult = model->replaceComponent(0, newComponent);
+
+    // Replace component by name.
     auto myNewComponent = libcellml::Component::create("myNewComponent");
-    replacementResult = model->replaceComponent("myComponent", myNewComponent); // Replace component by name.
+    replacementResult = model->replaceComponent("myComponent", myNewComponent);
+
+    // Replace component by object.
     auto myNewestComponent = libcellml::Component::create("myNewestComponent");
-    component = model->component("myNewComponent"); // Get component by name.
-    replacementResult = model->replaceComponent(component, myNewestComponent); // Replace component by object.
+    // Get component by name.
+    component = model->component("myNewComponent");
+    replacementResult = model->replaceComponent(component, myNewestComponent);
 
     // end - UNDERSTANDING COLLECTIONS 5
     if (!replacementResult) {
