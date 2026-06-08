@@ -88,6 +88,17 @@ Case 1: Add a thing
     :start-after: // start - UNDERSTANDING COLLECTIONS 1
     :end-before: // end - UNDERSTANDING COLLECTIONS 1
 
+.. container:: toggle
+
+  .. container:: header
+
+    Show Python snippet
+
+  .. literalinclude:: asides.py
+    :language: python
+    :start-after: # start - UNDERSTANDING COLLECTIONS 1
+    :end-before: # end - UNDERSTANDING COLLECTIONS 1
+
 Case 2: Remove a thing
 ----------------------
 
@@ -101,6 +112,17 @@ Case 2: Remove a thing
     :language: c++
     :start-after: // start - UNDERSTANDING COLLECTIONS 2
     :end-before: // end - UNDERSTANDING COLLECTIONS 2
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show Python snippet
+
+  .. literalinclude:: asides.py
+    :language: python
+    :start-after: # start - UNDERSTANDING COLLECTIONS 2
+    :end-before: # end - UNDERSTANDING COLLECTIONS 2
 
 At this point, the model's components collection no longer contains any components, and the component pointer has no parent.
 
@@ -118,6 +140,17 @@ Case 3: Remove all things
     :start-after: // start - UNDERSTANDING COLLECTIONS 3
     :end-before: // end - UNDERSTANDING COLLECTIONS 3
 
+.. container:: toggle
+
+  .. container:: header
+
+    Show Python snippet
+
+  .. literalinclude:: asides.py
+    :language: python
+    :start-after: # start - UNDERSTANDING COLLECTIONS 3
+    :end-before: # end - UNDERSTANDING COLLECTIONS 3
+
 At this point, we have the same outcome as in Case 2 above.
 The model's component collection no longer contains the component, and the component itself has no parent.
 
@@ -134,6 +167,17 @@ Case 4: Take a thing
     :language: c++
     :start-after: // start - UNDERSTANDING COLLECTIONS 4
     :end-before: // end - UNDERSTANDING COLLECTIONS 4
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show Python snippet
+
+  .. literalinclude:: asides.py
+    :language: python
+    :start-after: # start - UNDERSTANDING COLLECTIONS 4
+    :end-before: # end - UNDERSTANDING COLLECTIONS 4
 
 Case 5: Replace a thing
 -----------------------
@@ -155,32 +199,10 @@ Case 5: Replace a thing
 
     Show Python snippet
 
-    # Consider the case where we already have a model containing a component named "myComponent" at index 0.
-
-    # Case 1: Use the get and remove functionality together.
-    component = model.component(0)                    # Get either by index,
-    component = model.component("componentName") # or by name.
-
-    was_removed = model.removeComponent(0)               # Remove either by index,
-    was_removed = model.removeComponent("componentName") # by name,
-    was_removed = model.removeComponent(component)       # or by symbol.
-
-    # At this point, the model's components collection no longer contains the component, and the component
-    # pointer has no parent.
-
-    # Case 2: Use the take functionality.
-    component = model.takeComponent(0)             # Take either by index,
-    component = model.takeComponent("myComponent") # or by name.
-
-    # At this point, we have the same outcome as in Case 1 above.  The model's component collection no
-    # longer contains the component, and the component itself has no parent.
-
-    # Case 3: A cautionary tale using remove without get.
-    i_am_a_bool_not_a_component = model.removeComponent(0) # Remove either by index, name or symbol as above.
-
-    # In the situation where no other reference to the component exists (ie: we did not "get" it as in Case 1),
-    # the model's collection will no longer contain the component AND the entire contents of that component
-    # will be permanently deleted.
+  .. literalinclude:: asides.py
+    :language: python
+    :start-after: # start - UNDERSTANDING COLLECTIONS 5
+    :end-before: # end - UNDERSTANDING COLLECTIONS 5
 
 Associated code
 ===============
