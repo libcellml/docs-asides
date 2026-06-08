@@ -90,46 +90,38 @@ For example:
 
 .. tabs::
 
-    .. code-tab:: cpp
+    .. group-tab:: C++
 
-        // Declare, name, and define a "millisecond" unit pointer.
-        auto ms = libcellml::Units::create("millisecond");
+        .. literalinclude:: understanding_units.cpp
+            :language: c++
+            :start-after: // start - UNDERSTANDING UNITS 1
+            :end-before: // end - UNDERSTANDING UNITS 1
 
-        // The manner of specification here is agnostic: all three definitions are identical.
-        ms->addUnit("second", "milli");  // reference unit and built-in prefix
-        // OR
-        ms->addUnit("second", 1.0, -3);  // reference unit, multiplier, exponent
-        // OR
-        ms->addUnit("second", 1.0, 0, 0.001);  // reference unit, multiplier, exponent
+    .. group-tab:: Python
 
-    .. code-tab:: python
-
-        from libcellml import Units
-
-        # Declare, name, and define a "millisecond" unit pointer.
-        ms = Units("millisecond")
-
-        # The manner of specification here is agnostic: all three definitions are identical.
-        ms.addUnit("second", "milli")          # reference unit and built-in prefix
-        # OR
-        ms.addUnit("second", -3, 0.001)        # reference unit, exponent, multiplier
-        # OR
-        ms.addUnit("second", 1, 1.0, 0.01)     # reference unit, prefix, exponent, multiplier
+        .. literalinclude:: understanding_units.py
+            :language: python
+            :start-after: # start - UNDERSTANDING UNITS 1
+            :end-before: # end - UNDERSTANDING UNITS 1
 
 Units can be defined based on one another as well.
 For example, after defining our :code:`millisecond` units, we could then use this definition to define the :code:`per_millisecond` units by simply including it with an exponent of -1:
 
 .. tabs:: 
 
-    .. code-tab:: cpp
+    .. group-tab:: C++
 
-        // Define a per_millisecond unit based on millisecond^-1:
-        per_ms->addUnit(ms, -1.0);
+        .. literalinclude:: understanding_units.cpp
+            :language: c++
+            :start-after: // start - UNDERSTANDING UNITS 2
+            :end-before: // end - UNDERSTANDING UNITS 2
 
-    .. code-tab:: python
+    .. group-tab:: Python
 
-        # Defining a per_millisecond unit based on millisecond^-1.
-        per_ms.addUnit(ms, -1.0)  # reference unit, exponent
+        .. literalinclude:: understanding_units.py
+            :language: python
+            :start-after: # start - UNDERSTANDING UNITS 2
+            :end-before: # end - UNDERSTANDING UNITS 2
 
 Custom irreducible units
 ------------------------
@@ -140,27 +132,19 @@ Here's an example.
 
 .. tabs:: 
 
-    .. code-tab:: cpp
+    .. group-tab:: C++
 
-        // Create a custom irreducible unit named "banana".
-        auto uBanana = libcellml::Units::create("banana");
+        .. literalinclude:: understanding_units.cpp
+            :language: c++
+            :start-after: // start - UNDERSTANDING UNITS 3
+            :end-before: // end - UNDERSTANDING UNITS 3
 
-        // Note that when a UnitsPtr is defined with a name only (that is, without any
-        // calls to the addUnit(...) function), it is effectively irreducible.
+    .. group-tab:: Python
 
-        // Create a new compound unit based on the "banana" unit above.
-        auto uBunchOfBananas = libcellml::Units::create("bunch_of_bananas");
-        u2->addUnit("banana", 5.0);  // include bananas^5 in the bunch_of_bananas unit
+        .. literalinclude:: understanding_units.py
+            :language: python
+            :start-after: # start - UNDERSTANDING UNITS 3
+            :end-before: # end - UNDERSTANDING UNITS 3
 
-    .. code-tab:: python
 
-        from libcellml import Units
-
-        # Create a custom irreducible unit named "banana".
-        uBanana = Units("banana")
-
-        # Note that when a Units is defined with a name only, it is effectively irreducible.
-
-        # Create a new compound unit based on the "banana" unit above.
-        uBunchOfBananas = Units("bunch_of_bananas")
-        uBunchOfBananas.addUnit("banana", 5.0)  # include bananas^5 in the bunch_of_bananas unit
+Note that when a UnitsPtr is defined with a name only (that is, without any calls to the addUnit(...) function), it is effectively irreducible.

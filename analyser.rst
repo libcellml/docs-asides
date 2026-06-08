@@ -1,7 +1,7 @@
 .. _understanding_analyser:
 
 ================================
-Understanding the analyser class
+Understanding the Analyser class
 ================================
 
 TODO
