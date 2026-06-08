@@ -60,40 +60,100 @@ The :code:`takeThing` functions combine a little of the *remove* and a little of
 It will return a pointer to the item (like the *get* :code:`thing` functionality above), but it will also remove the item from the collection (like :code:`removeThing`), updating both the collection as well as the item's parent.
 The item is thus detached from its parent, and "taken" by the returned pointer.
 
+Replace a thing
+===============
+Within the :code:`Model` and :code:`Component` items are :code:`replaceUnits` and :code:`replaceComponent` functions respectively.
+Their operation is straightforward: a position within the collection is specified (either using an index, or the name of an existing item in the collection), and a replacement item is supplied.
+The replacement item overwrites what was previously stored at the position in the collection.
+In addition, the :code:`replaceComponent` takes an optional boolean argument indicating whether to search the encapsulated children for the item, if specified by name.
+By default this is set to :code:`true`.
+For more information about replacement, please see the API documentation for :api:`Model <Model>` and :api:`Component <Component>` items directly.
+
+Examples
+========
+
 Examples are shown for C++ and Python below.
 
-.. tabs::
+Case 1: Add a thing
+-------------------
 
-  .. code-tab:: c++
+.. container:: toggle
 
-    // Consider the case where we already have a model containing a component named "myComponent" at index 0.
+  .. container:: header
 
-    // Case 1: Use the get and remove functionality together.
-    auto component = model->component(0);               // Get either by index,
-    auto component = model->component("componentName"); // or by name.
+    Show C++ snippet
 
-    bool componentWasRemoved = model->removeComponent(0);               // Remove either by index,
-    bool componentWasRemoved = model->removeComponent("componentName"); // by name,
-    bool componentWasRemoved = model->removeComponent(component);       // or by symbol.
+  .. literalinclude:: asides.cpp
+    :language: c++
+    :start-after: // start - UNDERSTANDING COLLECTIONS 1
+    :end-before: // end - UNDERSTANDING COLLECTIONS 1
 
-    // At this point, the model's components collection no longer contains the component, and the component
-    // pointer has no parent.
+Case 2: Remove a thing
+----------------------
 
-    // Case 2: Use the take functionality.
-    auto component = model->takeComponent(0);             // Take either by index,
-    auto component = model->takeComponent("myComponent"); // or by name.
+.. container:: toggle
 
-    // At this point, we have the same outcome as in Case 1 above.  The model's component collection no
-    // longer contains the component, and the component itself has no parent.
+  .. container:: header
 
-    // Case 3: A cautionary tale using remove without get.
-    auto iAmABooleanNotAComponent = model->removeComponent(0); // Remove either by index, name or symbol as above.
+    Show C++ snippet
 
-    // In the situation where no other reference to the component exists (ie: we did not "get" it as in Case 1),
-    // the model's collection will no longer contain the component AND the entire contents of that component
-    // will be permanently deleted.
+  .. literalinclude:: asides.cpp
+    :language: c++
+    :start-after: // start - UNDERSTANDING COLLECTIONS 2
+    :end-before: // end - UNDERSTANDING COLLECTIONS 2
 
-  .. code-tab:: py
+At this point, the model's components collection no longer contains any components, and the component pointer has no parent.
+
+Case 3: Remove all things
+-------------------------
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show C++ snippet
+
+  .. literalinclude:: asides.cpp
+    :language: c++
+    :start-after: // start - UNDERSTANDING COLLECTIONS 3
+    :end-before: // end - UNDERSTANDING COLLECTIONS 3
+
+At this point, we have the same outcome as in Case 2 above.
+The model's component collection no longer contains the component, and the component itself has no parent.
+
+Case 4: Take a thing
+--------------------
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show C++ snippet
+
+  .. literalinclude:: asides.cpp
+    :language: c++
+    :start-after: // start - UNDERSTANDING COLLECTIONS 4
+    :end-before: // end - UNDERSTANDING COLLECTIONS 4
+
+Case 5: Replace a thing
+-----------------------
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show C++ snippet
+
+  .. literalinclude:: asides.cpp
+    :language: c++
+    :start-after: // start - UNDERSTANDING COLLECTIONS 5
+    :end-before: // end - UNDERSTANDING COLLECTIONS 5
+
+.. container:: toggle
+
+  .. container:: header
+
+    Show Python snippet
 
     # Consider the case where we already have a model containing a component named "myComponent" at index 0.
 
@@ -122,14 +182,12 @@ Examples are shown for C++ and Python below.
     # the model's collection will no longer contain the component AND the entire contents of that component
     # will be permanently deleted.
 
-Replace a thing
+Associated code
 ===============
-Within the :code:`Model` and :code:`Component` items are :code:`replaceUnits` and :code:`replaceComponent` functions respectively.
-Their operation is straightforward: a position within the collection is specified (either using an index, or the name of an existing item in the collection), and a replacement item is supplied.
-The replacement item overwrites what was previously stored at the position in the collection.
-In addition, the :code:`replaceComponent` takes an optional boolean argument indicating whether to search the encapsulated children for the item, if specified by name.
-By default this is set to :code:`true`.
-For more information about replacement, please see the API documentation for :api:`Model <Model>` and :api:`Component <Component>` items directly.
+
+The code used in the snippets above can be downloaded from:
+
+- :download:`asides.cpp<asides.cpp>` The C++ code used in the above examples.;
 
 .. container:: nb
 
