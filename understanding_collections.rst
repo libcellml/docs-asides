@@ -83,14 +83,14 @@ Use the add functionality to add a component to the model.
 
   .. group-tab:: C++
 
-    .. literalinclude:: asides.cpp
+    .. literalinclude:: understanding_collections.cpp
       :language: c++
       :start-after: // start - UNDERSTANDING COLLECTIONS 1
       :end-before: // end - UNDERSTANDING COLLECTIONS 1
 
   .. group-tab:: Python
 
-    .. literalinclude:: asides.py
+    .. literalinclude:: understanding_collections.py
       :language: python
       :start-after: # start - UNDERSTANDING COLLECTIONS 1
       :end-before: # end - UNDERSTANDING COLLECTIONS 1
@@ -109,14 +109,14 @@ Consider the case where we already have a model with three components:
 
   .. group-tab:: C++
 
-    .. literalinclude:: asides.cpp
+    .. literalinclude:: understanding_collections.cpp
       :language: c++
       :start-after: // start - UNDERSTANDING COLLECTIONS 2
       :end-before: // end - UNDERSTANDING COLLECTIONS 2
 
   .. group-tab:: Python
 
-    .. literalinclude:: asides.py
+    .. literalinclude:: understanding_collections.py
       :language: python
       :start-after: # start - UNDERSTANDING COLLECTIONS 2
       :end-before: # end - UNDERSTANDING COLLECTIONS 2
@@ -137,14 +137,14 @@ Use the remove all functionality to remove all components from the model.
 
   .. group-tab:: C++
 
-    .. literalinclude:: asides.cpp
+    .. literalinclude:: understanding_collections.cpp
       :language: c++
       :start-after: // start - UNDERSTANDING COLLECTIONS 3
       :end-before: // end - UNDERSTANDING COLLECTIONS 3
 
   .. group-tab:: Python
 
-    .. literalinclude:: asides.py
+    .. literalinclude:: understanding_collections.py
       :language: python
       :start-after: # start - UNDERSTANDING COLLECTIONS 3
       :end-before: # end - UNDERSTANDING COLLECTIONS 3
@@ -161,14 +161,14 @@ Again, consider that we have the same model as before with three components.
 
   .. group-tab:: C++
 
-    .. literalinclude:: asides.cpp
+    .. literalinclude:: understanding_collections.cpp
       :language: c++
       :start-after: // start - UNDERSTANDING COLLECTIONS 4
       :end-before: // end - UNDERSTANDING COLLECTIONS 4
 
   .. group-tab:: Python
 
-    .. literalinclude:: asides.py
+    .. literalinclude:: understanding_collections.py
       :language: python
       :start-after: # start - UNDERSTANDING COLLECTIONS 4
       :end-before: # end - UNDERSTANDING COLLECTIONS 4
@@ -183,14 +183,14 @@ Use the replace functionality to replace a component in the model.
 
   .. group-tab:: C++
 
-    .. literalinclude:: asides.cpp
+    .. literalinclude:: understanding_collections.cpp
       :language: c++
       :start-after: // start - UNDERSTANDING COLLECTIONS 5
       :end-before: // end - UNDERSTANDING COLLECTIONS 5
 
   .. group-tab:: Python
 
-    .. literalinclude:: asides.py
+    .. literalinclude:: understanding_collections.py
       :language: python
       :start-after: # start - UNDERSTANDING COLLECTIONS 5
       :end-before: # end - UNDERSTANDING COLLECTIONS 5
@@ -200,8 +200,8 @@ Associated code
 
 The code used in the snippets above can be downloaded from:
 
-- :download:`asides.cpp<asides.cpp>` The C++ code used in the above examples.;
-- :download:`asides.py<asides.py>` The Python code used in the above examples.;
+- :download:`understanding_collections.cpp<understanding_collections.cpp>` The C++ code used in the above examples.;
+- :download:`understanding_collections.py<understanding_collections.py>` The Python code used in the above examples.;
 
 .. container:: nb
 
